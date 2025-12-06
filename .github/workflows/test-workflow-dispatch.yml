@@ -78,9 +78,9 @@ on:
       test-input-25:
         type: string
         default: test-input-25
-      test-input-26:
-        type: string
-        default: test-input-26
+      # test-input-26:
+      #   type: string
+      #   default: test-input-26
 
 jobs:
   test-job:
