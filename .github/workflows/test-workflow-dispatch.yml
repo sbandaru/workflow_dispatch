@@ -1,0 +1,106 @@
+name: test-25-inputs
+
+on:
+  workflow_dispatch:
+    inputs:
+      test-input-1:
+        type: string
+        default: test-input-1
+      test-input-2:
+        type: string
+        default: test-input-2
+      test-input-3:
+        type: string
+        default: test-input-3
+      test-input-4:
+        type: string
+        default: test-input-4
+      test-input-5:
+        type: string
+        default: test-input-5
+      test-input-6:
+        type: string
+        default: test-input-6
+      test-input-7:
+        type: string
+        default: test-input-7
+      test-input-8:
+        type: string
+        default: test-input-8
+      test-input-9:
+        type: string
+        default: test-input-9
+      test-input-10:
+        type: string
+        default: test-input-10
+      test-input-11:
+        type: string
+        default: test-input-11
+      test-input-12:
+        type: string
+        default: test-input-12
+      test-input-13:
+        type: string
+        default: test-input-13
+      test-input-14:
+        type: string
+        default: test-input-14
+      test-input-15:
+        type: string
+        default: test-input-15
+      test-input-16:
+        type: string
+        default: test-input-16
+      test-input-17:
+        type: string
+        default: test-input-17
+      test-input-18:
+        type: string
+        default: test-input-18
+      test-input-19:
+        type: string
+        default: test-input-19
+      test-input-20:
+        type: string
+        default: test-input-20
+      test-input-21:
+        type: string
+        default: test-input-21
+      test-input-22:
+        type: string
+        default: test-input-22
+      test-input-23:
+        type: string
+        default: test-input-23
+      test-input-24:
+        type: string
+        default: test-input-24
+      test-input-25:
+        type: string
+        default: test-input-25
+      test-input-26:
+        type: string
+        default: test-input-26
+
+jobs:
+  test-job:
+    name: test-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print all workflow_dispatch inputs and count
+        env:
+          INPUTS_JSON: ${{ toJson(github.event.inputs) }}
+        run: |
+          echo "Raw inputs JSON:"
+          echo "$INPUTS_JSON"
+          echo
+
+          echo "Inputs (key=value):"
+          echo "$INPUTS_JSON" | jq -r 'to_entries[] | "\(.key)=\(.value)"'
+          echo
+
+          echo "Total inputs count:"
+          echo "$INPUTS_JSON" | jq 'length'
+
+      - name: List contents
+        run: ls -la
