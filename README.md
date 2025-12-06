@@ -1,6 +1,8 @@
 # workflow_dispatch
 
 ### "message": "Invalid request.\n\nNo more than 10 properties are allowed; 11 were supplied.", - SUCKS !!!
+
+### Fixed only for Web UI and not GH API (8774)[https://github.com/orgs/community/discussions/8774]
  
 ```bash
 curl -L \
