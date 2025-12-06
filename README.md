@@ -1,7 +1,9 @@
 # workflow_dispatch
 
- "message": "Invalid request.\n\nNo more than 10 properties are allowed; 11 were supplied.", - SUCKS !!!
- curl -L \
+### "message": "Invalid request.\n\nNo more than 10 properties are allowed; 11 were supplied.", - SUCKS !!!
+ 
+```bash
+curl -L \
   -X POST \
   -H "Accept: application/vnd.github+json" \
   -H "Authorization: Bearer <redact>" \
@@ -28,3 +30,4 @@
   "documentation_url": "https://docs.github.com/rest/actions/workflows#create-a-workflow-dispatch-event",
   "status": "422"
 }
+```
